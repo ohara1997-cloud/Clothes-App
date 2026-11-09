@@ -13,8 +13,7 @@ Store photos of every clothing item the owner has, and use an LLM to suggest wha
 
 ## 2. Users
 
-- Primary user: the owner. **(proposed)** Single user for v0.1.
-- Open: will anyone else use it? See Q1.
+- Single user: the owner only. **(confirmed 2026-11-09)**
 
 ## 3. Functional requirements
 
@@ -68,10 +67,10 @@ Store photos of every clothing item the owner has, and use an LLM to suggest wha
 |---|---|---|
 | N1 | Time to add one item, photo to saved | Under 15 seconds (proposed) |
 | N2 | Time to get a recommendation | Under 10 seconds (proposed) |
-| N3 | Wardrobe size supported | Up to 300 items (proposed, see Q4) |
-| N4 | Works on phone browsers | iOS Safari and Android Chrome, latest two versions (proposed) |
+| N3 | Wardrobe size supported | Up to 150 items expected, design for 300 (confirmed size 50 to 150) |
+| N4 | Phone first web app (PWA), installable to home screen | Confirmed. Browser versions still proposed: iOS Safari and Android Chrome, latest two |
 | N5 | Running cost | Open, see Q6 |
-| N6 | Privacy | Photos stored privately, only visible to the owner. Photos sent to the LLM provider for tagging only (proposed) |
+| N6 | Privacy | Photos stored privately, only visible to the owner. Photos sent to the LLM provider once, for tagging only (confirmed) |
 | N7 | Accessibility | WCAG 2.2 AA (proposed) |
 
 ## 5. Acceptance criteria for the core flows (draft)
@@ -90,10 +89,10 @@ Store photos of every clothing item the owner has, and use an LLM to suggest wha
 
 | # | Question | Why it matters |
 |---|---|---|
-| Q1 | Is this only for you, or will others use it (partner, friends, public)? | Decides auth, privacy work and hosting cost |
-| Q2 | Phone first, desktop first, or both? | Decides PWA versus native and the camera flow |
-| Q3 | Which LLM provider, and are you happy for photos to be sent to it? | Privacy and cost |
-| Q4 | Roughly how many items are in your wardrobe? | Affects prompt size, cost and grid design |
+| Q1 | Is this only for you, or will others use it (partner, friends, public)? | Answered: just the owner. |
+| Q2 | Phone first, desktop first, or both? | Answered: phone, as a web app. |
+| Q3 | Which LLM provider, and are you happy for photos to be sent to it? | Partly answered: photos may be sent for tagging. Provider not yet chosen. |
+| Q4 | Roughly how many items are in your wardrobe? | Answered: 50 to 150 items. |
 | Q5 | How much effort will you put into adding items? One by one, or photograph everything in one session? | Decides whether bulk upload is a must |
 | Q6 | What monthly running cost are you comfortable with? | Hosting tier and LLM call limits |
 | Q7 | Should weather be taken into account from v0.1? | Adds an external API and location permission |
@@ -106,4 +105,7 @@ Store photos of every clothing item the owner has, and use an LLM to suggest wha
 
 | Date | Decision | Reason |
 |---|---|---|
-| | | |
+| 2026-11-09 | Single user | Owner only, keeps auth and cost simple |
+| 2026-11-09 | Phone first PWA | No app store, camera access via browser |
+| 2026-11-09 | Wardrobe of 50 to 150 items | Whole wardrobe can be sent as text tags in one request |
+| 2026-11-09 | Photos sent to LLM for tagging | Makes adding items fast |
